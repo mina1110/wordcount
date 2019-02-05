@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h1>Word Count Result</h1>
+<h2>입력하신 텍스트는 총 {{total}}개의 단어로 구성되어 있습니다.</h2>
+
+<a href="{% url 'home' %}">다시 하기</a>
+<br>
+
+<h3>입력한 텍스트</h3>
+{{full}}
+
+<h3>단어 카운트</h3>
+
+{% for word, time in dictionary %}
+{{word}} : {{time}}번
+<br>
+{% endfor %}
+
+{% endblock %}
